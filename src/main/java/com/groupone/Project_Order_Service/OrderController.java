@@ -3,16 +3,22 @@ package com.groupone.Project_Order_Service;
 import lombok.AllArgsConstructor;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
 
 @AllArgsConstructor
 @RestController
 @RequestMapping("orders")
 public class OrderController {
-
+	
 	@Autowired
 	private OrderService orderService;
 
